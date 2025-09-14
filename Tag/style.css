@@ -1,0 +1,85 @@
+/* Base styles for dark mode */
+body {
+    background-color: #1a1a2e;
+    color: #e7e7e7;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    color: #26e7a6;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-top: 32px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-left: 4px solid #26e7a6;
+    padding-left: 16px;
+    margin-top: 32px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 24px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #394867;
+    margin: 24px 0;
+}
+
+ul, ol {
+    background: #22223b;
+    padding: 16px 28px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+ul li, ol li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+img {
+    display: block;
+    margin: 24px auto 16px auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px #0f346050;
+}
+
+p {
+    margin: 18px 0 16px 0;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 6px;
+        font-size: 0.93rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.15rem;
+        padding-left: 12px;
+    }
+
+    img {
+        width: 90vw;
+        height: auto;
+        max-width: 100%;
+    }
+}
