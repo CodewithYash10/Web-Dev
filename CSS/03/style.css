@@ -1,0 +1,33 @@
+h1{
+    background: red;
+    height: 100px;
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+    border: 10px solid pink;
+    border-radius: 10px;
+}
+
+h2{
+    background: yellow;
+    height: 100px;
+    width: 500px;
+    padding: 20px;
+    margin: 20px;
+    border: 10px solid green;
+    border-radius: 10px;
+}
+
+li{
+    background: rebeccapurple;
+    /* height: 5px;
+    width: 5px; */
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid green;
+    border-radius: 10px;
+}
+
+h3{
+    
+}

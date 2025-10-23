@@ -1,0 +1,300 @@
+<html lang="en">
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rank of a Matrix Poster</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for better typography --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Load MathJax for rendering LaTeX --><script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        /* Custom styles for A3-like print layout and enhanced aesthetics (TONED DOWN) */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7; /* Soft light gray background */
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .poster-container {
+            width: 100%;
+            max-width: 841px; 
+            min-height: 1189px; 
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 4rem 5rem; 
+            border-radius: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        /* Gradient overlay for subtle background texture (MUTED) */
+        .poster-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(147, 197, 253, 0.05) 0%, rgba(59, 130, 246, 0.03) 50%, rgba(126, 34, 206, 0.05) 100%);
+            z-index: 0;
+            opacity: 0.5; /* Reduced opacity */
+        }
+        .poster-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 800; 
+            color: #1e293b; /* Darker heading color */
+        }
+        h1 {
+            border-bottom: 5px solid #93c5fd; /* Softer Blue border */
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: #1e3a8a; /* Dark Blue title text */
+        }
+        h2 {
+            color: #3b82f6; /* Standard Blue for section titles */
+            margin-top: 2.5rem; 
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #eff6ff; /* Very light blue underline */
+        }
+        h3 {
+            color: #4f46e5; /* Standard Indigo for subheadings */
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        p, ul, blockquote {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #374151; /* Dark gray for body text */
+        }
+        .math-display {
+            background-color: #f8fafc; /* Very light slate for math blocks (Subtle) */
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            text-align: center;
+            font-size: 1.35rem; 
+            overflow-x: auto;
+            border: 1px solid #e2e8f0; /* Slate 200 border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        .highlight-box {
+            background-color: #eff6ff; /* Blue 50 for definition boxes (Subtle) */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            border-left: 5px solid #93c5fd; /* Soft Blue accent border */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .example-step {
+            background-color: #f0fdf4; /* Mint Green 50 for example steps (Subtle) */
+            padding: 0.75rem;
+            border-left: 4px solid #6ee7b7; /* Soft Green accent */
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .uses-item .icon {
+            font-size: 1.75rem;
+            color: #059669; /* Darker Emerald for good contrast */
+            margin-right: 0.75rem;
+            line-height: 1;
+        }
+        .result-highlight {
+             background-color: #e0f2f1; /* Light Teal 100 */
+             border: 2px solid #4db6ac; /* Teal 400 */
+             padding: 1.5rem;
+             border-radius: 1rem;
+             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+             color: #0f766e; /* Dark Teal text */
+        }
+    </style>
+</head>
+<body>
+    <div class="poster-container">
+        <div class="poster-content">
+            <!-- Poster Title --><header class="text-center mb-10">
+                <h1 class="text-6xl uppercase tracking-widest text-indigo-800">The Rank of a Matrix</h1>
+                <p class="text-2xl mt-3 text-gray-600 font-semibold">($\text{rank}(A)$) - Unlocking Matrix Properties</p>
+            </header>
+
+            <!-- Section 1: Definition --><section class="mb-10">
+                <h2 class="text-4xl">🎯 Definition</h2>
+                <p class="text-xl mb-6 text-gray-700">The **RANK** of a matrix $A$, denoted as $\text{rank}(A)$, is a single number that represents the **dimension of the vector space formed by its rows or columns.**</p>
+
+                <div class="highlight-box font-bold text-indigo-700">
+                    It is the **number of linearly independent rows or columns** in a matrix.
+                </div>
+                
+                <blockquote class="mt-6 text-gray-600 italic border-l-4 border-yellow-500 pl-4 py-2 text-lg">
+                    <span class="font-bold text-yellow-700">Key Fact:</span> The number of independent rows and independent columns is always the same for any given matrix.
+                </blockquote>
+            </section>
+
+            <!-- Section 2: Method --><section class="mb-10">
+                <h2 class="text-4xl">⚙️ Method: Row Echelon Form (REF)</h2>
+                <p class="text-xl text-gray-700">The most reliable way to find the rank is to convert the matrix to its Row Echelon Form (REF) using Gaussian Elimination.</p>
+
+                <div class="math-display">
+                    $$
+                    \text{rank}(A) = \text{Number of Non-Zero Rows in the Row Echelon Form of } A
+                    $$
+                </div>
+
+                <h3 class="text-3xl">Elementary Row Operations (E.R.O.s)</h3>
+                <p class="text-xl text-gray-700 mb-4">These operations are used to transform a matrix into REF without changing its rank:</p>
+                <ul class="list-disc ml-10 space-y-2 text-xl font-medium">
+                    <li>**Swap:** Interchanging two rows ($R_i \leftrightarrow R_j$).</li>
+                    <li>**Scale:** Multiplying a row by a non-zero scalar ($kR_i \to R_i$, where $k \neq 0$).</li>
+                    <li>**Replace:** Adding a multiple of one row to another row ($R_i + kR_j \to R_i$).</li>
+                </ul>
+            </section>
+
+            <!-- Section 3: Example Calculation --><section class="mb-10">
+                <h2 class="text-4xl">📝 Example Calculation</h2>
+
+                <p class="text-2xl font-semibold mb-4 text-indigo-700">Find the rank of the matrix $A$:</p>
+                <div class="math-display">
+                    $$
+                    A = \begin{pmatrix} 1 & 2 & 1 & 0 \\ -1 & 0 & 3 & 5 \\ 1 & 4 & 5 & 5 \end{pmatrix}
+                    $$
+                </div>
+
+                <!-- Step 1 --><div class="example-step">
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">Step 1: Eliminate entries below the first pivot (1).</h3>
+                    <div class="math-display text-base">
+                        $$
+                        \begin{align*}
+                        R_2 &\leftarrow R_2 + R_1 \\
+                        R_3 &\leftarrow R_3 - R_1
+                        \end{align*}
+                        \implies
+                        \begin{pmatrix}
+                        1 & 2 & 1 & 0 \\
+                        0 & 2 & 4 & 5 \\
+                        0 & 2 & 4 & 5
+                        \end{pmatrix}
+                        $$
+                    </div>
+                </div>
+
+                <!-- Step 2 --><div class="example-step">
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">Step 2: Eliminate entries below the second pivot (2).</h3>
+                    <div class="math-display text-base">
+                        $$
+                        R_3 \leftarrow R_3 - R_2
+                        \implies
+                        \begin{pmatrix}
+                        1 & 2 & 1 & 0 \\
+                        0 & 2 & 4 & 5 \\
+                        0 & 0 & 0 & 0
+                        </pmatrix}
+                        $$
+                    </div>
+                </div>
+
+                <!-- Step 3 --><div class="example-step">
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">Step 3: Count the non-zero rows.</h3>
+                    <p class="text-xl text-gray-700">The final matrix is in Row Echelon Form (REF).</p>
+                    <div class="text-center mt-4 p-4 bg-green-50 rounded-lg shadow-inner">
+                        <p class="text-2xl font-semibold text-emerald-800">
+                            Non-Zero Rows: $R_1$ and $R_2$. ($R_3$ is a zero row).
+                        </p>
+                        <div class="math-display bg-emerald-100 border-emerald-300">
+                            $$
+                            \text{Number of Non-Zero Rows} = 2
+                            $$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RESULT HIGHLIGHT (Correctly placed before Uses) --><section class="mt-8 text-center">
+                <h2 class="text-5xl text-teal-700 font-extrabold mb-5">✅ Calculation Result</h2>
+                <div class="math-display result-highlight">
+                    <p class="text-4xl text-teal-700 font-bold mb-0">
+                        The Rank of $A$ is:
+                    </p>
+                    $$
+                    \boxed{\text{rank}(A) = 2}
+                    $$
+                </div>
+            </section>
+
+            <!-- Section 4: Uses of Rank --><section class="mb-10">
+                <h2 class="text-4xl">💡 Uses of Rank</h2>
+                <p class="text-xl text-gray-700 mb-6">The rank of a matrix is a powerful concept with numerous applications in mathematics, science, and engineering:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xl">
+                    <div class="highlight-box !text-base !py-3 !px-4">
+                        <div class="uses-item">
+                            <span class="icon">📈</span>
+                            <div>
+                                <h3 class="text-2xl !mt-0 !mb-1 text-indigo-700">System Solvability</h3>
+                                <p class="text-lg">Determining if a system of linear equations $Ax=b$ has a unique solution, infinite solutions, or no solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box !text-base !py-3 !px-4">
+                        <div class="uses-item">
+                            <span class="icon">⚙️</span>
+                            <div>
+                                <h3 class="text-2xl !mt-0 !mb-1 text-indigo-700">Matrix Invertibility</h3>
+                                <p class="text-lg">A square matrix $A$ is invertible if and only if $\text{rank}(A)$ equals its number of rows (or columns).</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box !text-base !py-3 !px-4">
+                        <div class="uses-item">
+                            <span class="icon">📊</span>
+                            <div>
+                                <h3 class="text-2xl !mt-0 !mb-1 text-indigo-700">Data Compression</h3>
+                                <p class="text-lg">Used in techniques like Singular Value Decomposition (SVD) for dimensionality reduction and image processing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="highlight-box !text-base !py-3 !px-4">
+                        <div class="uses-item">
+                            <span class="icon">🤖</span>
+                            <div>
+                                <h3 class="text-2xl !mt-0 !mb-1 text-indigo-700">Machine Learning</h3>
+                                <p class="text-lg">Important in understanding the complexity of data, feature selection, and algorithm stability.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Conclusion / Footer --><section class="mt-12 pt-6 border-t-4 border-indigo-600 text-center poster-footer">
+                <p class="text-2xl text-gray-700 mt-6 font-medium">
+                    The rank of a matrix is a powerful indicator of its structural properties and the linear independence within its rows and columns.
+                </p>
+                <p class="text-lg text-gray-500 mt-8">
+                    Understanding rank is crucial for solving linear systems, analyzing data, and many advanced topics in science and engineering.
+                </p>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
+
